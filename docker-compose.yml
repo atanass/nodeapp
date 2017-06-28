@@ -1,7 +1,7 @@
 version: '2'
 services:
   server:
-    image: node-server
+    image: atanass/node-app
     hostname: node-server
     expose:
       - 8080
@@ -9,7 +9,7 @@ services:
       - "80:8080"
     links:
       - database
-    container_name: nodejs-service
+    container_name: atanass/node-db
   database:
     image: node-db
     hostname: postgres-db
