@@ -31,8 +31,8 @@ admin.post('/add', function (req, res) {
   var last_name = req.param('ln');
   pool.query('INSERT INTO USERS values ($1, $2)', [first_name, last_name], function (err, sqlres) {
     if(err) {
-      return console.error('error inserting data', err);
       res.send(500, "Error inserting data...")
+      return console.error('error inserting data', err);
     } else {
       res.send("User added!");
     }
