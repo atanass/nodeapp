@@ -26,7 +26,7 @@ admin.get('/', function (req, res) {
   res.send('Admin Homepage');
 });
 
-admin.get('/add', function (req, res) {
+admin.post('/add', function (req, res) {
   var first_name = req.param('fn');
   var last_name = req.param('ln');
   pool.query('INSERT INTO USERS values ($1, $2)', [first_name, last_name], function (err, sqlres) {

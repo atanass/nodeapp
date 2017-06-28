@@ -9,9 +9,9 @@ services:
       - "80:8080"
     links:
       - database
-    container_name: atanass/node-db
+    container_name: nodejs-service
   database:
-    image: node-db
+    image: atanass/node-db
     hostname: postgres-db
     expose:
       - 5432
